@@ -10,3 +10,13 @@ print('Задача 6. Игра в кубики')
 # Сумма: 7
 # Владелец платит
 # Игра окончена
+
+dice_client = int(input("Кубик Кости: "))
+dice_bar = int(input("Кубик владельца: "))
+if dice_client >= dice_bar:
+    print("Разность:", dice_client - dice_bar)
+    print("Игрок платит")
+else:
+    print("Сумма:", dice_client + dice_bar)
+    print("Владелец платит")
+print("Игра окончена")
