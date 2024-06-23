@@ -19,3 +19,24 @@ print('Задача 7. Почта')
 
 # второй —  при выполнении условия выводится сообщение:
 # «Посылку получить нельзя».
+
+# 8-10
+# 12-14
+# 15-18
+# 20-22
+
+hour = int(input("Введите время в часах: "))
+
+method = 1
+if (hour >= 8 and hour <= 10) or (hour >= 12 and hour <= 14) or (hour >= 15 and hour <= 18) or (hour >= 20 and hour <= 22):
+    print("Способ", method, "- Можно получить посылку")
+else:
+    print("Способ", method, "- Посылку получить нельзя")
+
+method = 2
+if not (hour >= 8 and hour <= 10) and not (hour >= 12 and hour <= 14) and not (hour >= 15 and hour <= 18) and not(hour >= 20 and hour <= 22):
+    print("Способ", method, "- Посылку получить нельзя")
+else:
+    print("Способ", method, "- Можно получить посылку")
+
+
