@@ -18,3 +18,18 @@ print('Задача 4. Поставьте оценку!')
 # Введите число: 0
 # Кол-во положительных чисел: 1
 # Кол-во отрицательных чисел: 2
+
+pos_counter = 0
+neg_counter = 0
+
+while True:
+    num = int(input("Введите число: "))
+    if num > 0:
+        pos_counter += 1
+    elif num < 0:
+        neg_counter += 1
+    else:
+        break
+
+print("Кол-во положительных чисел:", pos_counter)
+print("Кол-во отрицательных чисел:", neg_counter)
