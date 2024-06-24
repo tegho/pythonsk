@@ -52,10 +52,10 @@ tasks = 0
 go_shopping = False
 
 print("Начался восьмичасовой рабочий день.")
-i = 1
-while i <= 8:
-    print(i, "-й час", sep="")
-    i += 1
+hour = 1
+while hour <= 8:
+    print(hour, "-й час", sep="")
+    hour += 1
     tasks += int(input("Сколько задач решит Максим? "))
     go_shopping |= input("Звонит жена. Взять трубку? (1 — да, 0 — нет): ") == "1"
 
