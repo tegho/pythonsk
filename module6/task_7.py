@@ -17,7 +17,8 @@ print('Задача 7. Игра «Угадай число»')
 # Вы угадали! Число попыток: 4
 
 father_num = random.randint(1, 9)
-i = 1
+
+tries = 1
 while True:
     num = int(input("Введите число: "))
     if num > father_num:
@@ -25,6 +26,6 @@ while True:
     elif num < father_num:
         print("Число меньше, чем нужно. Попробуйте ещё раз!")
     else:
-        print("Вы угадали! Число попыток:", i)
+        print("Вы угадали! Число попыток:", tries)
         break
-    i += 1
+    tries += 1

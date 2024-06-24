@@ -14,10 +14,10 @@ deposit = int(input("(X) Сумма вклада? "))
 goal = int(input("(Y) Желаемая сумма? "))
 percent = int(input("(P) Ежегодный процент? "))
 
-i = 0
+years = 0
 sum = deposit
 while sum < goal:
     sum += sum * percent / 100
-    i += 1
+    years += 1
 
-print("Нужно ждать", i, "лет")
+print("Нужно ждать", years, "лет")

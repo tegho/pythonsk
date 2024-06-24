@@ -22,9 +22,9 @@ print("Загадайте в уме число от 1 до 100 включите�
 range_start = 1
 range_end = 100
 
-i = 0
+tries = 0
 while True:
-    i += 1
+    tries += 1
     guess = (range_end + range_start) // 2
 
     answer = ""
@@ -35,7 +35,7 @@ while True:
             answer = ""
 
     if answer == "1":
-        print("Вы загадали число ", guess, ", задача решена за ", i, " шагов.", sep="")
+        print("Вы загадали число ", guess, ", задача решена за ", tries, " шагов.", sep="")
         break
     elif answer == "2":
         range_start = guess
