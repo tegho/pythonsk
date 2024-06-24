@@ -34,7 +34,7 @@ else:
     print("Способ", method, "- Посылку получить нельзя")
 
 method = 2
-if not (hour >= 8 and hour <= 10) and not (hour >= 12 and hour <= 14) and not (hour >= 15 and hour <= 18) and not(hour >= 20 and hour <= 22):
+if not (hour >= 8 and hour <= 10) and not (hour >= 12 and hour <= 14) and not (hour >= 15 and hour <= 18) and not (hour >= 20 and hour <= 22):
     print("Способ", method, "- Посылку получить нельзя")
 else:
     print("Способ", method, "- Можно получить посылку")
