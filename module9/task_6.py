@@ -5,3 +5,25 @@ print('Задача 6. Коровы')
 # Что нужно сделать
 
 # Напишите программу для подсчёта получаемого молока в коровнике. Важно учитывать следующее взаимодействие: пользователь вводит строку из десяти символов a и b. Необходимо определить, сколько в итоге будет произведено молока за день.
+
+data = input("Введите строку данных ")
+sym_vacant = "a"
+sym_occupied = "b"
+sum = 0
+
+data_good = True
+data_len = len(data)
+if data_len != 10:
+    print(f"В строке {data_len} символов, а должно быть 10")
+    data_good = False
+else:
+    for sym in data:
+        if (sym != sym_vacant) and (sym != sym_occupied):
+            print(f"Неверный символ '{sym}'. Можно использовать только символы '{sym_vacant}'(свободно) и '{sym_occupied}'(занято)")
+            data_good = False
+
+if data_good:
+    for pos, sym in enumerate(data):
+        if sym == sym_occupied:
+            sum += 2 * (pos + 1)
+    print(f"Надой молока сегодня {sum} литров")

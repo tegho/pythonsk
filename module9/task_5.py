@@ -13,3 +13,18 @@ print('Задача 5. Великий и могучий')
 
 # Введите текст: Меня зовут Василий
 # Самое длинное слово, 7 букв
+
+longest_len = 0
+current_len = 0
+separator = " "
+
+text = input("Введите текст: ")
+for sym in text + separator:
+    if sym != separator:
+        current_len += 1
+    else:
+        if current_len > longest_len:
+            longest_len = current_len
+        current_len = 0
+
+print(f"Самое длинное слово, букв: {longest_len}")

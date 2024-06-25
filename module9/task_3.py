@@ -17,3 +17,13 @@ print('Задача 3. Театр')
 # ======= *** =======
 # ======= *** =======
 # ======= *** =======
+
+seat_sym = "="
+space_sym = "*"
+rows = int(input("Введите кол-во рядов: "))
+columns = int(input("Введите кол-во сидений ряду: "))
+space = int(input("Введите кол-во метров между рядами: "))
+
+for row in range(rows):
+    print(seat_sym * columns, space_sym * space, seat_sym * columns)
+    # print(f"{seat_sym * columns} {space_sym * space} {seat_sym * columns}")

@@ -10,3 +10,11 @@ print('Задача 2. Кривой мессенджер')
 
 # Введите текст: «Пр*ивет как дела».
 # Символ «*» стоит на позиции 3.
+
+text = input("Введите текст ")
+bad_symbol = "*"
+
+for pos, symbol in enumerate(text):
+    if symbol == bad_symbol:
+        print(f"Символ {bad_symbol} стоит на позиции {pos + 1}")
+        break

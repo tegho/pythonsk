@@ -16,3 +16,36 @@ print('Задача 4. Марсоход 2')
 # [Программа]: Марсоход находится на позиции 5, 20, введите команду:
 # [Оператор]: W
 # [Программа]: Марсоход находится на позиции 5, 20, введите команду:
+
+command_move_up = "W"
+command_move_down = "S"
+command_move_left = "A"
+command_move_right = "D"
+command_exit = "Q"
+room_x = 1
+room_y = 1
+room_width = 15
+room_heigh = 20
+vehicle_x = 8
+vehicle_y = 10
+command = ""
+
+print(f"Начало координат слева вверху в точке {room_x}, {room_y}")
+while True:
+    command = input(f"Марсоход находится на позиции {vehicle_x}, {vehicle_y}, введите команду: ")
+    if command == command_exit:
+        break
+    elif command == command_move_up:
+        if vehicle_y > room_y:
+            vehicle_y -= 1
+    elif command == command_move_down:
+        if vehicle_y < room_y + room_heigh - 1:
+            vehicle_y += 1
+    elif command == command_move_left:
+        if vehicle_x > room_x:
+            vehicle_x -= 1
+    elif command == command_move_right:
+        if vehicle_x < room_x + room_width - 1:
+            vehicle_x += 1
+    else:
+        print("Неизвестная команда")
