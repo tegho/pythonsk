@@ -26,6 +26,6 @@ while True:
     elif num < father_num:
         print("Число меньше, чем нужно. Попробуйте ещё раз!")
     else:
-        print("Вы угадали! Число попыток:", tries)
+        print(f"Вы угадали! Число попыток: {tries}")
         break
     tries += 1

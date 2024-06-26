@@ -29,13 +29,13 @@ while True:
 
     answer = ""
     while answer == "":
-        answer = input("Твоё число равно(1), меньше(3) или больше(2), чем число " + str(guess) + "? ")
+        answer = input(f"Твоё число равно(1), меньше(3) или больше(2), чем число {guess}? ")
         if (answer != "1") and (answer != "2") and (answer != "3"):
             print("Можно отвечать только 1, 2 или 3")
             answer = ""
 
     if answer == "1":
-        print("Вы загадали число ", guess, ", задача решена за ", tries, " шагов.", sep="")
+        print(f"Вы загадали число {guess}, задача решена за {tries} шагов.")
         break
     elif answer == "2":
         range_start = guess
