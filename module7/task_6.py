@@ -12,5 +12,6 @@ print('Задача 6. Замечательные числа')
 for digit1 in range(1, 10):
     for digit2 in range(10):
         num = 10 * digit1 + digit2
-        if num == 3 * digit1 * digit2:
+        num_tridig = 3 * digit1 * digit2
+        if num == num_tridig:
             print(num)

@@ -22,4 +22,4 @@ if range_end < 0:
 else:
     for num in range(1, range_end + 1):
         res *= num
-    print("Факториал", range_end, "равен", res)
+    print(f"Факториал {range_end} равен {res}")

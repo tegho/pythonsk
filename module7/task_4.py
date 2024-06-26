@@ -12,7 +12,7 @@ print('Задача 4. Успеваемость в классе')
 count3 = count4 = count5 = 0
 num = int(input("Сколько учеников в классе? "))
 for kid in range(1, num + 1):
-    grade = input(str(kid) + "/" + str(num) + ") Введите оценку ")
+    grade = input(f"{kid}/{num}) Введите оценку ")
     if grade == "5":
         count5 += 1
     elif grade == "4":
