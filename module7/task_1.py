@@ -6,6 +6,6 @@ print('Задача 1. Должники')
 
 pool_size = 10
 for person in range(1, pool_size + 1):
-    num = int(input(str(person) + "/" + str(pool_size) + ") Введите число "))
+    num = int(input(f"{person}/{pool_size}) Введите число "))
     if (num % 2 == 0) and (num >= 0):
         print("  Четное положительное.")

@@ -15,4 +15,4 @@ for member_num in range(1, crew_size + 1):
     if (word == "Карамба") or (word == "карамба"):
         hired += 1
 
-print("Набрали в команду", hired, "матросов")
+print(f"Набрали в команду {hired} матросов")

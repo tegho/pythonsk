@@ -22,10 +22,12 @@ command_move_down = "S"
 command_move_left = "A"
 command_move_right = "D"
 command_exit = "Q"
+# абсолютные координата начала комнаты
 room_x = 1
 room_y = 1
 room_width = 15
 room_heigh = 20
+# абсолютные координаты посадки
 vehicle_x = 8
 vehicle_y = 10
 command = ""
@@ -36,16 +38,20 @@ while True:
     if command == command_exit:
         break
     elif command == command_move_up:
-        if vehicle_y > room_y:
+        border_top_y = room_y
+        if vehicle_y > border_top_y:
             vehicle_y -= 1
     elif command == command_move_down:
-        if vehicle_y < room_y + room_heigh - 1:
+        border_bottom_y = room_y + room_heigh - 1
+        if vehicle_y < border_bottom_y:
             vehicle_y += 1
     elif command == command_move_left:
-        if vehicle_x > room_x:
+        border_left_x = room_x
+        if vehicle_x > border_left_x:
             vehicle_x -= 1
     elif command == command_move_right:
-        if vehicle_x < room_x + room_width - 1:
+        border_right_x = room_x + room_width - 1
+        if vehicle_x < border_right_x:
             vehicle_x += 1
     else:
         print("Неизвестная команда")

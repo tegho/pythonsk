@@ -25,6 +25,6 @@ if cards_total < 2:
 else:
     sum = cards_total
     for card_index in range(1, cards_total):
-        another_card = int(input(str(card_index)+"/" + str(cards_total - 1) + ") Введите номер карточки: "))
+        another_card = int(input(f"{card_index}/{cards_total - 1}) Введите номер карточки: "))
         sum += card_index - another_card
     print("Номер пропавшей карточки: ", sum)

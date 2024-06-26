@@ -10,6 +10,6 @@ print('Задача 2. Посчитай чужую зарплату...')
 months_total = 12
 avg = 0
 for month in range(1, months_total + 1):
-    avg += int(input("Введите сумму за " + str(month) + " месяц "))
+    avg += int(input(f"Введите сумму за {month} месяц "))
 avg /= months_total
 print("Средняя зарплата:", avg)

@@ -20,6 +20,6 @@ for num in range(range_start, range_end + 1):
         res += num
 if hits > 0:
     res /= hits
-    print("Ответ:", res)
+    print(f"Ответ: {res}")
 else:
     print("Чисел кратных 3 на отрезке нет")
