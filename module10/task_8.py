@@ -12,3 +12,25 @@ print('Задача 8. Яма ')
 # 543....345
 # 5432..2345
 # 5432112345
+
+# 1-9
+# 2-8
+# 3-7
+# 4-6
+
+sym_space = "."
+
+height = int(input("Введите число: "))
+
+if height < 2:
+    print("Яма должна быть глубже")
+else:
+    for row in range(height):
+        for col in range(2 * height + 1):
+            if col == height:
+                continue
+            elif abs(col - height) < abs(row - height):
+                print(sym_space, end="")
+            else:
+                print(abs(height - col), end="")
+        print()

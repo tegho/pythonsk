@@ -14,3 +14,16 @@ print('Задача 4. Простые числа')
 # Введите число: 37.
 
 # Количество простых чисел в последовательности: 4.
+
+counter = int(input("Введите количество чисел: "))
+simple_numbers = 0
+
+while counter > 0:
+    counter -= 1
+    num = int(input("Введите число: "))
+    for div in range(2, num - 1):
+        if num % div != 0:
+            simple_numbers += 1
+            break
+
+print(f"Количество простых чисел в последовательности: {simple_numbers}")
