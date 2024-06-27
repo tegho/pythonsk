@@ -15,12 +15,11 @@ print('Задача 4. Простые числа')
 
 # Количество простых чисел в последовательности: 4.
 
-counter = int(input("Введите количество чисел: "))
+pool_size = int(input("Введите количество чисел: "))
 simple_numbers = 0
 
-while counter > 0:
-    counter -= 1
-    num = int(input("Введите число: "))
+for counter in range(1, pool_size + 1):
+    num = int(input(f"{counter}/{pool_size}) Введите число: "))
     for div in range(2, num - 1):
         if num % div != 0:
             simple_numbers += 1
