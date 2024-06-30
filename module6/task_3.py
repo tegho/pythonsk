@@ -12,13 +12,10 @@ print('Задача 3. Слишком большие числа')
 # Ответ: 4
 
 num = int(input("Введите число: "))
-num_divided = num
+num_divided = abs(num)
 digits = 1
-while num != 0:
-    if num_divided // 10 == 0:
-        break
-    else:
-        digits += 1
-        num_divided //= 10
+while num_divided // 10 != 0:
+    digits += 1
+    num_divided //= 10
 
 print("Ответ:", digits)
