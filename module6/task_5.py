@@ -49,7 +49,7 @@ print('Задача 5. Обычный день на работе')
 # Нужно зайти в магазин
 
 tasks = 0
-go_shopping = False
+go_shopping = 0
 
 print("Начался восьмичасовой рабочий день.")
 hour = 1
@@ -57,8 +57,8 @@ while hour <= 8:
     print(hour, "-й час", sep="")
     hour += 1
     tasks += int(input("Сколько задач решит Максим? "))
-    go_shopping |= input("Звонит жена. Взять трубку? (1 — да, 0 — нет): ") == "1"
+    go_shopping += int(input("Звонит жена. Взять трубку? (1 — да, 0 — нет): "))
 
 print("Рабочий день закончился. Всего выполнено задач: ", tasks)
-if go_shopping:
+if go_shopping > 0:
     print("Нужно зайти в магазин.")

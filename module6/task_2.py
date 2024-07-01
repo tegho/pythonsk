@@ -20,11 +20,10 @@ print('Задача 2. Коллекторы')
 name = input("Введите имя: ")
 debt = float(input("Введите сумму долга: "))
 print(f"\n{name}, ваша задолженность составляет {debt} рублей.")
+payment = 0
 
-while True:
+while payment < debt:
     payment = float(input("\nСколько рублей вы внесёте прямо сейчас, чтобы её погасить? "))
     if payment < debt:
         print(f"Маловато, {name}. Давайте ещё раз.")
-    else:
-        print(f"Отлично, {name}! Вы погасили долг. Спасибо!")
-        break
+print(f"Отлично, {name}! Вы погасили долг. Спасибо!")

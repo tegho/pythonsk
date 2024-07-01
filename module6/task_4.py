@@ -24,11 +24,11 @@ neg_counter = 0
 
 while True:
     num = int(input("Введите число: "))
-    if num > 0:
+    if (num > 0) and (num <= 100):
         pos_counter += 1
-    elif num < 0:
+    elif (num > -100) and (num < 0):
         neg_counter += 1
-    else:
+    elif num == 0:
         break
 
 print("Кол-во положительных чисел:", pos_counter)

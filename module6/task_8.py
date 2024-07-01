@@ -38,6 +38,6 @@ while True:
         print(f"Вы загадали число {guess}, задача решена за {tries} шагов.")
         break
     elif answer == "2":
-        range_start = guess
+        range_start = guess + 1
     else:
-        range_end = guess
+        range_end = guess - 1
