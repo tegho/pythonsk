@@ -17,7 +17,7 @@ percent = int(input("(P) Ежегодный процент? "))
 years = 0
 sum = deposit
 while sum < goal:
-    sum += sum * percent / 100
+    sum = int(sum + sum * percent / 100)
     years += 1
 
 print("Нужно ждать", years, "лет")
