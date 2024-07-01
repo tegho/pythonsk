@@ -1,3 +1,5 @@
+import math
+
 print('Задача 2. Грубая математика')
 
 # В одном аналитическом центре,
@@ -26,3 +28,19 @@ print('Задача 2. Грубая математика')
 # 
 # Введите число: -5.9
 # x = -6   exp(x) = 0.0024787521766663585
+
+pool_size = int(input("Введите кол-во чисел: "))
+res = 0
+
+for counter in range(1, pool_size + 1):
+    num = float(input(f"{counter}/{pool_size}) Введите число: "))
+    if num > 0:
+        num = math.ceil(num)
+        res = math.log(num)
+        print(f"x = {num}\tlog(x) = {res}")
+    elif num < 0:
+        num = math.floor(num)
+        res = math.exp(num)
+        print(f"x = {num}\texp(x) = {res}")
+    else:
+        print(f"x = {num}\tЛогарифм не определен")

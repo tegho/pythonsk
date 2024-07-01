@@ -14,3 +14,10 @@ print('Задача 1. Конвертация')
 # 
 # Мы живём в альтернативной реальности,
 # где 1 евро = 1.25 доллара, а 1 доллар = 60.87 рублей.
+
+rate_1eur_usd = 1.25
+rate_1usd_rur = 60.87
+
+price_eur = float(input("Введите стоимость в евро "))
+price_rur = price_eur * rate_1eur_usd * rate_1usd_rur
+print("Стоимость покупки в рублях:", round(price_rur, 2))
