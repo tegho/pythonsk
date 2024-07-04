@@ -20,9 +20,11 @@ for kid in range(1, num + 1):
     elif grade == "3":
         count3 += 1
 
-if (count5 > count4) and (count5 > count3):
+if (count5 == count4 == count3):
+    print("Сегодня поровну.")
+elif (count5 > count4) and (count5 > count3):
     print("Сегодня отличников больше.")
-elif (count4 > count5) and (count4 > count3):
+elif count4 > count3:
     print("Сегодня хорошистов больше.")
-elif (count3 > count5) and (count3 > count4):
+else:
     print("Сегодня троечников больше.")

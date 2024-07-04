@@ -9,9 +9,7 @@ print('Задача 6. Замечательные числа')
 # 15 -> 1*5*3 = 15 - получившееся число равно оригиналу, значит число надо вывести
 # 16 -> 1*6*3 = 18 - число выводить не нужно, 18 не равно 16
 
-for digit1 in range(1, 10):
-    for digit2 in range(10):
-        num = 10 * digit1 + digit2
-        num_tridig = 3 * digit1 * digit2
-        if num == num_tridig:
-            print(num)
+for num_double in range(10, 100):
+    num_tridig = 3 * (num_double // 10) * (num_double % 10)
+    if num_double == num_tridig:
+        print(num_double)
