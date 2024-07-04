@@ -23,8 +23,8 @@ cards_total = int(input("Введите количество карточек: "
 if cards_total < 2:
     print("Маловато. Должно быть минимум 2 карточки")
 else:
-    sum = cards_total
+    sum = (1 + cards_total) * cards_total / 2
     for card_index in range(1, cards_total):
         another_card = int(input(f"{card_index}/{cards_total - 1}) Введите номер карточки: "))
-        sum += card_index - another_card
+        sum -= another_card
     print("Номер пропавшей карточки: ", sum)
