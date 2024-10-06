@@ -13,12 +13,12 @@ if pool_size < 1:
 else:
     for counter in range(1, pool_size + 1):
         num = n = int(input(f"{counter}/{pool_size}) Введите число "))
-        sum = 0
+        summa = 0
         while (n > 0):
-            sum += n % 10
+            summa += n % 10
             n //= 10
-        if sum > max_sum:
-            max_sum = sum
+        if summa > max_sum:
+            max_sum = summa
             max_num = num
     if max_num < 1:
         print("Натуральных чисел в ряду не нашлось")
