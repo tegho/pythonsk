@@ -20,9 +20,12 @@ simple_numbers = 0
 
 for counter in range(1, pool_size + 1):
     num = int(input(f"{counter}/{pool_size}) Введите число: "))
-    for div in range(2, num - 1):
-        if num % div != 0:
-            simple_numbers += 1
+    is_simple = 1
+    for div in range(2, num):
+        if num % div == 0:
+            is_simple = 0
             break
+    if is_simple == 1:
+        simple_numbers += 1
 
 print(f"Количество простых чисел в последовательности: {simple_numbers}")
