@@ -8,3 +8,17 @@ print('Задача 1. Сумма чисел')
 # Введите число: 5
 # 
 # Я знаю, что сумма чисел от 1 до 5 равна 15
+
+
+def summa_n(num):
+    sum = 0
+    for counter in range(1, num + 1):
+        sum += counter
+    print(f"Я знаю, что сумма чисел от 1 до {num} равна {sum}")
+
+
+num = int(input("Введите число: "))
+if num < 0:
+    print("Число должно быть целым положительным")
+else:
+    summa_n(num)
