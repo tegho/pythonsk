@@ -22,7 +22,7 @@ command_move_down = "S"
 command_move_left = "A"
 command_move_right = "D"
 command_exit = "Q"
-# абсолютные координата начала комнаты
+# абсолютные координаты комнаты
 room_x = 1
 room_y = 1
 room_width = 15
@@ -32,26 +32,18 @@ vehicle_x = 8
 vehicle_y = 10
 command = ""
 
-print(f"Начало координат слева вверху в точке {room_x}, {room_y}")
+print("Начало координат слева вверху")
 while True:
-    command = input(f"Марсоход находится на позиции {vehicle_x}, {vehicle_y}, введите команду: ")
+    command = input(f"Марсоход находится на позиции x={vehicle_x}, y={vehicle_y}, введите команду: ").upper()
     if command == command_exit:
         break
-    elif command == command_move_up:
-        border_top_y = room_y
-        if vehicle_y > border_top_y:
-            vehicle_y -= 1
-    elif command == command_move_down:
-        border_bottom_y = room_y + room_heigh - 1
-        if vehicle_y < border_bottom_y:
-            vehicle_y += 1
-    elif command == command_move_left:
-        border_left_x = room_x
-        if vehicle_x > border_left_x:
-            vehicle_x -= 1
-    elif command == command_move_right:
-        border_right_x = room_x + room_width - 1
-        if vehicle_x < border_right_x:
-            vehicle_x += 1
+    elif (command == command_move_up) and (vehicle_y > room_y):
+        vehicle_y -= 1
+    elif (command == command_move_down) and (vehicle_y < room_y + room_heigh - 1):
+        vehicle_y += 1
+    elif (command == command_move_left) and (vehicle_x > room_x):
+        vehicle_x -= 1
+    elif (command == command_move_right) and (vehicle_x < room_x + room_width - 1):
+        vehicle_x += 1
     else:
-        print("Неизвестная команда")
+        print("Игнорирую")
