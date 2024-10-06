@@ -20,11 +20,10 @@ separator = " "
 
 text = input("Введите текст: ")
 for sym in text + separator:
-    if sym != separator:
-        current_len += 1
-    else:
-        if current_len > longest_len:
-            longest_len = current_len
+    current_len += 1
+    if sym == separator:
         current_len = 0
+    if current_len > longest_len:
+        longest_len = current_len
 
 print(f"Самое длинное слово, букв: {longest_len}")
