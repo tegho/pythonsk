@@ -32,14 +32,14 @@ print('Задача 3. Аналог Steam')
 file_size = float(input("Укажите размер файла для скачивания: "))
 speed = float(input("Какова скорость вашего соединения: "))
 time = 0
-sum = 0
+summa = 0
 
-while sum < file_size:
+while summa < file_size:
     time += 1
-    sum += speed
-    if sum >= file_size:
-        sum = file_size
+    summa += speed
+    if summa >= file_size:
+        summa = file_size
         percent = 100
     else:
-        percent = round(100 * sum / file_size)
-    print(f"Прошло {time} сек. Скачано {sum:.1f} из {file_size:.1f} Мб ({percent}%)")
+        percent = round(100 * summa / file_size)
+    print(f"Прошло {time} сек. Скачано {summa:.1f} из {file_size:.1f} Мб ({percent}%)")
