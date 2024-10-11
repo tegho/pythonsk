@@ -12,11 +12,11 @@ print('Задача 3. Апгрейд калькулятора')
 
 def sum_digits(num):
     num = abs(num)
-    sum = 0
+    summa = 0
     while num > 0:
-        sum += num % 10
+        summa += num % 10
         num //= 10
-    print(f"Сумма цифр: {sum}")
+    print(f"Сумма цифр: {summa}")
 
 
 def max_digit(num):

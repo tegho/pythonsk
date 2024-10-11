@@ -11,10 +11,10 @@ print('Задача 1. Сумма чисел')
 
 
 def summa_n(num):
-    sum = 0
+    summa = 0
     for counter in range(1, num + 1):
-        sum += counter
-    print(f"Я знаю, что сумма чисел от 1 до {num} равна {sum}")
+        summa += counter
+    print(f"Я знаю, что сумма чисел от 1 до {num} равна {summa}")
 
 
 num = int(input("Введите число: "))

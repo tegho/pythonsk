@@ -17,15 +17,13 @@ print('Задача 2. Функция в функции')
 # Помогите Евгению и реализуйте такую программ
 
 
-def positive():
-    print("Положительное")
-
-
-def negative():
-    print("Отрицательное")
-
-
 def test():
+    def positive():
+        print("Положительное")
+
+    def negative():
+        print("Отрицательное")
+
     num = int(input("Введите целое число "))
     if num >= 0:
         positive()
