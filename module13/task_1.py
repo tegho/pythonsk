@@ -22,3 +22,36 @@ print('Задача 1. Урок информатики 2')
 # 
 # Введите число: 0.0012
 # Формат плавающей точки: x = 1.2 * 10 ** -3
+
+x = 0
+x_str = input("Введите значение X: ")
+
+x = float(x_str)
+# try:
+#     x = float(x_str)
+# except ValueError:
+#     print(f"По-моему \"{x_str}\" это не число")
+
+if x <= 0:
+    print("Х должен быть больше нуля")
+    exit()
+
+mult = 0.1
+dir = 1
+if x < 1:
+    mult = 10
+    dir = -1
+
+significand = x
+exponent = 0
+while (int(significand) not in range(1, 10)):
+    significand *= mult
+    exponent += dir
+
+# мантиссу вычисляем повторно чтобы избавиться от накопленной ошибки
+if x < 1:
+    significand = x / (10 ** exponent)
+else:
+    significand = x * (10 ** exponent)
+
+print(f"Формат плавающей точки: x = {significand} * 10 ** {exponent}")
