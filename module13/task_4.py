@@ -12,35 +12,48 @@ print('Задача 4. Недоделка 2')
 # Разбейте приведённую ниже программу на функции. Повторений кода должно быть как можно меньше. Также сделайте, чтобы в основной части программы был только ввод чисел, затем изменённые числа и вывод их суммы.
 
 
-first_n = int(input("Введите первое число: "))
-first_num_count = 0
-temp = first_n
+def count_numbers(num):
+    if num == 0:
+        return 1
 
-while temp > 0:
-    first_num_count += 1
-    temp = temp // 10
+    counter = 0
+    while num > 0:
+        num //= 10
+        counter += 1
+    return counter
 
-if first_num_count < 3:
-    print("В первом числе меньше трёх цифр.")
-else:
-    last_digit = first_n % 10
-    first_digit = first_n // 10 ** (first_num_count - 1)
-    between_digits = first_n % 10 ** (first_num_count - 1) // 10
-    first_n = last_digit * 10 ** (first_num_count - 1) + between_digits * 10 + first_digit
-    print('Изменённое первое число:', first_n)
-    second_n = int(input("\nВведите второе число: "))
-    second_num_count = 0
-    temp = second_n
-    
-    while temp > 0:
-        second_num_count += 1
-        temp = temp // 10
-    if second_num_count < 4:
-        print("Во втором числе меньше четырёх цифр.")
-    else:
-        last_digit = second_n % 10
-        first_digit = second_n // 10 ** (second_num_count - 1)
-        between_digits = second_n % 10 ** (second_num_count - 1) // 10
-        second_n = last_digit * 10 ** (second_num_count - 1) + between_digits * 10 + first_digit
-        print('Изменённое второе число:', second_n)
-        print('\nСумма чисел:', first_n + second_n)
+
+def change_number(num):
+    counter = count_numbers(num)
+    last_digit = num % 10
+    first_digit = num // (10 ** (counter - 1))
+    between_digits = (num % (10 ** (counter - 1))) // 10
+    return last_digit * 10 ** (counter - 1) + between_digits * 10 + first_digit
+
+
+def user_input(msg, digits):
+    num = int(input(msg))
+    if count_numbers(num) < digits:
+        print(f"Не менее {digits} цифр")
+        return -1
+    return num
+
+
+def main():
+    num1 = user_input("\nВведите первое число: ", 3)
+    if num1 < 0:
+        return
+    num1_new = change_number(num1)
+    print(f"Изменённое первое число: {num1_new}")
+
+    num2 = user_input("\nВведите второе число: ", 4)
+    if num2 < 0:
+        return
+    num2_new = change_number(num2)
+    print(f"Изменённое второе число: {num2_new}")
+
+    summa = num1_new + num2_new
+    print(f"\nСумма чисел: {summa}")
+
+
+main()
