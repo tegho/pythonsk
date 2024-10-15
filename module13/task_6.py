@@ -36,10 +36,16 @@ def risk_func(x):
     return x**3 - 3 * x**2 - 12 * x + 10
 
 
-def df_dx(x, dx):
-    """ Это производная функции риска от глубины """
-    return (risk_func(x + dx) - risk_func(x)) / dx
+# def df_dx(x, dx):
+#     """ Это производная функции риска от глубины """
+#     return (risk_func(x + dx) - risk_func(x)) / dx
 
+
+def same_sign(num1, num2):
+    """ True если оба числа с одинаковыым знаком, иначе False """
+    if ((num1 < 0) and (num2 >= 0)) or ((num2 < 0) and (num1 >= 0)):
+        return False
+    return True
 
 # 1. Предположим, что минимальные значения функции не означают минимальный уровень опасности
 # 2. Предположим, что функция дана как "черный ящик" и ответ нельзя найти решением уравнения
@@ -47,26 +53,54 @@ def df_dx(x, dx):
 def main():
     DEPTH_MIN = 0
     DEPTH_MAX = 4
-    STEPS_MAX = 10
+    STEPS_MAX = 15
 
     risk_threshold = float(input("Введите максимально допустимый уровень опасности: "))
     if risk_threshold < 0:
         print("Только положительные значения")
         return
 
+    ######## newton
+    # steps = 0
+    # dx = (DEPTH_MAX - DEPTH_MIN)/1e9
+    # x0 = x1 = DEPTH_MIN
+    # while (x1 < DEPTH_MAX) and (steps < STEPS_MAX):
+    #     x1 = x0 - risk_func(x0) / df_dx(x0, dx)
+    #     steps += 1
+    #     if (abs(risk_func(x1)) <= risk_threshold):
+    #         print(f"Приблизительная глубина безопасной кладки: {x1}")
+    #         print(f"Решение найдено за {steps} шагов")
+    #         break
+    #     x0 = x1
+    # else:
+    #     print(f"Не удалось найти решение за {STEPS_MAX} шагов")
+
+    ######## binary
     steps = 0
-    dx = (DEPTH_MAX - DEPTH_MIN)/1e9
-    x0 = x1 = DEPTH_MIN
-    while (x1 < DEPTH_MAX) and (steps <= STEPS_MAX):
-        x1 = x0 - risk_func(x0) / df_dx(x0, dx)
+    depth_start = DEPTH_MIN
+    depth_end = DEPTH_MAX
+    while steps < STEPS_MAX:
+        depth_guess = (depth_start + depth_end) / 2
+        risk_guess = risk_func(depth_guess)
+        risk_start = risk_func(depth_start)
+        risk_end = risk_func(depth_end)
         steps += 1
-        if (abs(risk_func(x1)) <= risk_threshold):
-            print(f"Приблизительная глубина безопасной кладки: {x1}")
+        if (abs(risk_guess) <= risk_threshold):
+            print(f"Приблизительная глубина безопасной кладки: {depth_guess}")
             print(f"Решение найдено за {steps} шагов")
+            if (same_sign(risk_start, risk_guess) and same_sign(risk_guess, risk_end)):
+                print("Решение не оптимально!")
             break
-        x0 = x1
+        elif (same_sign(risk_start, risk_guess) and same_sign(risk_guess, risk_end)):
+            print("Не удалось найти решение, функцию нужно исследовать")
+            break
+        elif not same_sign(risk_start, risk_guess):
+            depth_end = depth_guess
+        else:
+        # elif not same_sign(risk_guess, risk_end):
+            depth_start = depth_guess
     else:
-        print(f"Не удалось найти решение")
+        print(f"Не удалось найти решение за {STEPS_MAX} шагов")
 
 
 main()
